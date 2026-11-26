@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#211d3b">
+<title>Pixel Training</title>
+<style>
+:root{--ink:#302744;--muted:#796b8b;--bg:#f4edff;--pink:#f4c8e5;--lav:#c8a9ee;--mint:#bde9dc;--navy:#211d3b;--white:#fff}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(135deg,#f9efff,#e9f5ff);font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink)}
+button,input,textarea,select{font:inherit}button{cursor:pointer;border:0;border-radius:12px;padding:11px 14px;background:#8f68b5;color:white;font-weight:700}button:disabled{opacity:.45;cursor:not-allowed}.secondary{background:#eee6f7;color:#59466d;border:1px solid #d9c9eb}.shell{max-width:1050px;margin:20px auto;padding:14px}.top{background:var(--navy);color:#f8eaff;border-radius:22px;padding:20px;box-shadow:0 12px 35px #40305b33}.topline{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.brand{font-size:clamp(24px,4vw,38px);font-weight:950;letter-spacing:2px;text-shadow:3px 3px #704f91}.stats{display:flex;gap:10px;flex-wrap:wrap}.pill{background:#403456;padding:8px 12px;border-radius:12px;color:#ffe9b6;font-weight:800}.nav{display:flex;gap:8px;overflow-x:auto;padding:13px 0}.nav button{white-space:nowrap}.nav button.active{background:#392d52;box-shadow:inset 0 0 0 2px #e5baf6}.panel{background:#fffD;border:1px solid #e5d9f2;border-radius:20px;padding:20px;box-shadow:0 8px 28px #49335b12}.hero{background:linear-gradient(135deg,#292345,#463660);color:#fff;border-radius:18px;padding:22px;display:flex;align-items:center;justify-content:space-between;gap:15px;min-height:170px;overflow:hidden}.pixel-avatar{font-size:76px;filter:drop-shadow(4px 5px 0 #100d22);image-rendering:pixelated}.hero h2{margin:0 0 6px}.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:13px;margin-top:14px}.card{background:white;border:1px solid #eadff3;border-radius:16px;padding:15px}.card h3{margin:0 0 8px}.big{font-size:27px;font-weight:900;color:#9469b9}.bar{height:13px;border-radius:20px;background:#eadff3;overflow:hidden}.bar span{display:block;height:100%;background:linear-gradient(90deg,#d28ad2,#9c7cce);width:0%}.field{width:100%;padding:12px;border:1px solid #d9cbe7;border-radius:11px;background:#fff;color:#302744;margin:5px 0 10px}.exercise{display:flex;justify-content:space-between;align-items:center;gap:12px}.exercise+.exercise{border-top:1px solid #eee5f5;padding-top:12px;margin-top:12px}.flames{display:grid;grid-template-columns:repeat(7,1fr);gap:7px;margin:16px 0}.flame{aspect-ratio:1;border:2px solid #7565a0;border-radius:9px;background:#201d42;color:#a69bd1;display:grid;place-items:center;font-size:clamp(18px,4vw,27px)}.flame.done{border-color:#e5a6fa;box-shadow:0 0 12px #db9bf5;color:#ffe4a0;background:#4c356d}.room{min-height:270px;border-radius:17px;background:linear-gradient(145deg,#d8c5f7,#f8d7ed 55%,#bde8df);display:grid;place-items:center;text-align:center;padding:20px;border:4px solid #fff;box-shadow:inset 0 0 0 3px #b69ad8}.room-art{font-size:70px;line-height:1.5;text-shadow:2px 2px white}.shop-item{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid #eee5f5}.notice{background:#e5f7ee;color:#27694c;padding:10px;border-radius:10px;margin:10px 0}.hidden{display:none}footer{text-align:center;color:#897b9a;font-size:12px;padding:18px}
+@media(max-width:600px){.shell{padding:9px;margin:6px auto}.panel{padding:14px}.hero{min-height:145px}.pixel-avatar{font-size:55px}}
+</style>
+
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Pixel Training">
+
+</head>
+<body>
+<div class="shell">
+<header class="top">
+ <div class="topline"><div><div class="brand">✦ PIXEL TRAINING ✦</div><div style="color:#cdbce2">YOUR LITTLE FITNESS WORLD</div></div>
+ <div class="stats"><span class="pill" id="points">⭐ 120</span><span class="pill" id="streak">🔥 0 Tage</span><span class="pill">LEVEL <span id="level">1</span></span></div></div>
+</header>
+<nav class="nav" id="nav">
+ <button class="active" data-tab="start">🏡 Start</button><button data-tab="exercises">📖 Übungen</button><button data-tab="flames">🔥 Flammen</button><button data-tab="room">🪴 Zimmer</button><button data-tab="shop">🛍️ Shop</button><button data-tab="avatar">🧚 Figur</button>
+</nav>
+<main>
+<section class="panel" id="start">
+ <div class="hero"><div><h2>Willkommen in deiner Welt!</h2><div style="color:#ddcfee">Dein nächstes kleines Abenteuer wartet.</div><p>Trainiere in deinem Tempo und sammle Pixel-Punkte.</p></div><div class="pixel-avatar">🧚🏻‍♀️</div></div>
+ <div class="grid">
+  <div class="card"><h3>🎯 Dein Tagesziel</h3><div class="big"><span id="minutes">0</span> / 30 Min.</div><div class="bar"><span id="progress"></span></div><p class="muted">30 Minuten Bewegung für dein Tagesziel.</p><button class="secondary" id="minus">− 5 Min.</button> <button id="plus">+ 5 Min.</button><button id="complete" style="width:100%;margin-top:10px">🔥 Tagesziel abhaken</button><div id="goalMsg"></div></div>
+  <div class="card"><h3>✨ Deine Sammlung</h3><div class="big" id="points2">⭐ 120</div><p class="muted">Pixel-Punkte zum Einrichten und Anziehen.</p><div class="big" id="streak2">🔥 0</div><p class="muted">Erreichte Trainingstage</p></div>
+  <div class="card"><h3>🗓️ Dein Kalender</h3><p class="muted">Deine Trainingsziele werden hier gesammelt. Ein Pausentag ist völlig okay.</p><button class="secondary" onclick="showTab('flames')">Flammen-Pfad ansehen</button></div>
+ </div>
+</section>
+<section class="panel hidden" id="exercises">
+ <h2>📖 Dein Übungsbuch</h2><p class="muted">Speichere eigene Übungen und markiere deine Favoriten.</p>
+ <label>Übungsname<input class="field" id="exName" placeholder="z. B. Schulterkreisen"></label>
+ <label>Beschreibung / Anleitung<textarea class="field" id="exDesc" rows="3" placeholder="Wie funktioniert die Übung?"></textarea></label>
+ <button id="addExercise">＋ Übung speichern</button><div id="exerciseList" style="margin-top:18px"></div>
+ <p class="muted" style="font-size:13px">Tipp: Für echte Bilder kannst du später Fotos hinzufügen oder eine Schritt-für-Schritt-Bilderklärung ergänzen.</p>
+</section>
+<section class="panel hidden" id="flames">
+ <h2>🔥 Dein Flammen-Pfad</h2><p class="muted">Ein leuchtendes Feld für jeden Tag, an dem du dein Trainingsziel erreichst.</p>
+ <div class="flames" id="flameGrid"></div><div class="grid"><div class="card"><h3>🔥 Normale Flamme</h3><p class="muted">Für erreichte Trainingstage.</p></div><div class="card"><h3>💜 Magische Flamme</h3><p class="muted">Für längere Serien.</p></div><div class="card"><h3>💎 Kristall-Flamme</h3><p class="muted">Für besondere Meilensteine.</p></div></div>
+</section>
+<section class="panel hidden" id="room">
+ <h2>🏡 Deine Pixel-Zimmer</h2><div class="room"><div><div class="room-art">🪟 ✨ 🌷<br>🪴 🛋️ 🧸<br>🧺 🌈 🐈</div><strong id="roomName">Frühlingszimmer</strong><div id="decor" class="muted">Deine Einrichtung wartet auf dich.</div></div></div>
+ <h3>Jahreszeit auswählen</h3><div class="grid"><button class="secondary season" data-season="Frühling">🌸 Frühling</button><button class="secondary season" data-season="Sommer">☀️ Sommer</button><button class="secondary season" data-season="Herbst">🍂 Herbst</button><button class="secondary season" data-season="Winter">❄️ Winter</button></div>
+</section>
+<section class="panel hidden" id="shop">
+ <h2>🛍️ Pixel-Shop</h2><p>Dein Kontostand: <strong id="shopPoints">120 ⭐</strong></p><div id="shopList"></div>
+</section>
+<section class="panel hidden" id="avatar">
+ <h2>🧚 Dein Pixel-Chibi</h2><div class="hero" style="justify-content:center;text-align:center;flex-direction:column"><div class="pixel-avatar" id="avatarArt">🧚🏻‍♀️</div><h2 id="avatarName">Lavendel-Chibi</h2><div style="color:#e8d9fa">Dein kleiner Begleiter auf dem Trainingsweg!</div></div>
+ <h3>Farbstil wählen</h3><div class="grid"><button class="secondary avatarChoice" data-avatar="Lavendel">💜 Lavendel</button><button class="secondary avatarChoice" data-avatar="Rosa">🌸 Rosa</button><button class="secondary avatarChoice" data-avatar="Mint">🌿 Mint</button><button class="secondary avatarChoice" data-avatar="Sternen">⭐ Sternen</button></div>
+</section>
+</main><footer>PIXEL TRAINING · Dein kleines Pixel-Abenteuer 💜<br>Deine Eingaben werden lokal in diesem Browser gespeichert.</footer>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+let state=JSON.parse(localStorage.getItem('pixelTrainingState')||'null')||{points:120,minutes:0,streak:0,completed:false,exercises:[{name:'Dehnen',desc:'Sanfte Beweglichkeit',favorite:true},{name:'Kniebeugen',desc:'Beine und Gesäß',favorite:false},{name:'Spaziergang',desc:'Bewegung an der frischen Luft',favorite:false}],owned:[],season:'Frühling',avatar:'Lavendel',days:[]};
+const items=[['Rosa Sofa',50,'🛋️'],['Sternenlampe',35,'🌟'],['Blumenpflanze',25,'🌷'],['Regenbogenteppich',60,'🌈'],['Katzenkissen',40,'🐱'],['Pixel-Krone',75,'👑']];
+function save(){localStorage.setItem('pixelTrainingState',JSON.stringify(state));render()}
+function showTab(tab){document.querySelectorAll('main section').forEach(s=>s.classList.add('hidden'));$(tab).classList.remove('hidden');document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab))}
+window.showTab=showTab;
+$('nav').addEventListener('click',e=>{let b=e.target.closest('button[data-tab]');if(b)showTab(b.dataset.tab)});
+$('plus').onclick=()=>{if(!state.completed){state.minutes=Math.min(30,state.minutes+5);save()}};
+$('minus').onclick=()=>{if(!state.completed){state.minutes=Math.max(0,state.minutes-5);save()}};
+$('complete').onclick=()=>{if(state.minutes>=30&&!state.completed){state.completed=true;state.streak++;state.points+=30;state.days.push(new Date().toLocaleDateString('de-DE'));$('goalMsg').innerHTML='<div class="notice">Tagesziel erreicht! +30 Pixel-Punkte ✨</div>';save()}};
+$('addExercise').onclick=()=>{let name=$('exName').value.trim();if(!name)return;state.exercises.push({name,desc:$('exDesc').value.trim()||'Eigene Übung',favorite:false});$('exName').value='';$('exDesc').value='';save()};
+function renderExercises(){$('exerciseList').innerHTML=state.exercises.map((e,i)=>`<div class="exercise"><div><strong>${escapeHTML(e.name)}</strong><div class="muted">${escapeHTML(e.desc)}</div></div><div><button class="secondary fav" data-i="${i}">${e.favorite?'♥':'♡'}</button></div></div>`).join('');document.querySelectorAll('.fav').forEach(b=>b.onclick=()=>{let i=+b.dataset.i;state.exercises[i].favorite=!state.exercises[i].favorite;save()})}
+function escapeHTML(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function renderShop(){$('shopList').innerHTML=items.map(([n,p,em])=>`<div class="shop-item"><div><strong>${em} ${n}</strong><div class="muted">⭐ ${p} Punkte</div></div><button ${state.owned.includes(n)||state.points<p?'disabled':''} data-item="${n}">${state.owned.includes(n)?'Gekauft':'Kaufen'}</button></div>`).join('');document.querySelectorAll('[data-item]').forEach(b=>b.onclick=()=>{let item=items.find(x=>x[0]===b.dataset.item);if(item&&state.points>=item[1]&&!state.owned.includes(item[0])){state.points-=item[1];state.owned.push(item[0]);save()}})}
+function renderFlames(){$('flameGrid').innerHTML=Array.from({length:35},(_,i)=>`<div class="flame ${i>=35-state.days.length?'done':''}">${i>=35-state.days.length?'🔥':''}</div>`).join('')}
+function render(){ $('points').textContent='⭐ '+state.points;$('points2').textContent='⭐ '+state.points;$('shopPoints').textContent=state.points+' ⭐';$('streak').textContent='🔥 '+state.streak+' Tage';$('streak2').textContent='🔥 '+state.streak;$('minutes').textContent=state.minutes;$('progress').style.width=(state.minutes/30*100)+'%';$('complete').disabled=state.minutes<30||state.completed;$('complete').textContent=state.completed?'✓ Tagesziel erledigt':'🔥 Tagesziel abhaken';$('plus').disabled=state.minutes>=30||state.completed;$('minus').disabled=state.minutes===0||state.completed;$('roomName').textContent=state.season+'zimmer';$('decor').textContent=state.owned.length?state.owned.join(' · '):'Deine Einrichtung wartet auf dich.';$('avatarName').textContent=state.avatar+'-Chibi';$('avatarArt').textContent=state.avatar==='Rosa'?'🧚🏻‍♀️':state.avatar==='Mint'?'🧚🏼‍♀️':state.avatar==='Sternen'?'✨🧚🏻‍♀️':'🧚🏻‍♀️';renderExercises();renderShop();renderFlames()}
+document.querySelectorAll('.season').forEach(b=>b.onclick=()=>{state.season=b.dataset.season;save()});
+document.querySelectorAll('.avatarChoice').forEach(b=>b.onclick=()=>{state.avatar=b.dataset.avatar;save()});
+render();
+</script>
+
+<script>
+if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js').catch(()=>{}));
+}
+</script>
+</body></html>
